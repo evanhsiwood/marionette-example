@@ -8,10 +8,7 @@ module.exports = class TodoModule extends BaseModule
     console.log 'Initializing TodoModule'
     @startWithParent = true
 
-    @collection = new Todos([
-      { text: "Wash dishes", done: false }
-      { text: "Learn Marionette.js", done: true }
-    ])
+    @collection = new Todos([])
 
     @collection.fetch()
 

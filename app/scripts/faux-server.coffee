@@ -1,6 +1,8 @@
+todos = require('./mock/todos.json')
+
 module.exports = {
   run: ->
     fauxServer.get("todos/", ->
-      console.log("BFF")
+      todos
     )
 }

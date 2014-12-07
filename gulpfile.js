@@ -13,20 +13,21 @@ var paths = {
   src: './app/',
   dest: './public/',
   vendor: './vendor/',
-  assets: './assets/'
+  assets: './assets/',
+  mock: './mock/'
 }
 
-gulp.task('set-production', function() {
+gulp.task('set-production', function () {
   environment = 'production';
 });
 
-gulp.task('assets', function() {
- gulp.src(paths.assets + "**")
+gulp.task('assets', function () {
+  gulp.src(paths.assets + "**")
     .pipe(plumber())
     .pipe(gulp.dest(paths.dest));
 });
 
-gulp.task('vendor-styles', function() {
+gulp.task('vendor-styles', function () {
   stream = gulp.src([
       paths.vendor + 'styles/bootstrap.css',
       paths.vendor + 'styles/bootstrap-theme.css'
@@ -39,9 +40,16 @@ gulp.task('vendor-styles', function() {
   }
 
   stream.pipe(gulp.dest(paths.dest + 'css/'))
+
+  stream = gulp.src([
+    paths.vendor + 'styles/bootstrap.css.map',
+    paths.vendor + 'styles/bootstrap-theme.css.map'
+  ])
+  stream.pipe(gulp.dest(paths.dest + 'css/'))
+
 });
 
-gulp.task('vendor-scripts', function() {
+gulp.task('vendor-scripts', function () {
   stream = gulp.src([
       paths.vendor + 'scripts/jquery.js',
       paths.vendor + 'scripts/bootstrap.js',
@@ -61,7 +69,7 @@ gulp.task('vendor-scripts', function() {
   stream.pipe(gulp.dest(paths.dest + 'js/'))
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
   stream = gulp.src(paths.src + 'scripts/index.coffee', { read: false })
     .pipe(plumber())
     .pipe(browserify({
@@ -78,7 +86,7 @@ gulp.task('scripts', function() {
   stream.pipe(gulp.dest(paths.dest + 'js/'))
 });
 
-gulp.task('html', function() {
+gulp.task('html', function () {
   gulp.src(paths.src + 'index.jade')
     .pipe(plumber())
     .pipe(jade({
@@ -107,12 +115,12 @@ gulp.task('watch', function () {
   gulp.watch(paths.src + 'index.jade', ['html']);
 
   gulp.watch([
-      paths.dest + 'js/*.js',
-      paths.dest + 'css/*.css',
-      paths.dest + '**/*.html'
-    ], function(evt) {
-      server.changed(evt.path);
-    });
+    paths.dest + 'js/*.js',
+    paths.dest + 'css/*.css',
+    paths.dest + '**/*.html'
+  ], function (evt) {
+    server.changed(evt.path);
+  });
 });
 
 gulp.task('vendor', ['vendor-styles', 'vendor-scripts']);
