@@ -13,6 +13,8 @@ module.exports = class TodoModule extends BaseModule
       { text: "Learn Marionette.js", done: true }
     ])
 
+    @collection.fetch()
+
     @app.router.processAppRoutes @, {
       'todo/:text': 'showTodo'
     }

@@ -48,7 +48,8 @@ gulp.task('vendor-scripts', function() {
       paths.vendor + 'scripts/underscore.js',
       paths.vendor + 'scripts/backbone.js',
       paths.vendor + 'scripts/backbone.syphon.js',
-      paths.vendor + 'scripts/backbone.marionette.js'
+      paths.vendor + 'scripts/backbone.marionette.js',
+      paths.vendor + 'scripts/backbone-faux-server.js'
     ])
     .pipe(plumber())
     .pipe(concat("vendor.js"))
