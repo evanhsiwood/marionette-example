@@ -1,6 +1,7 @@
 Marionette.Behaviors.behaviorsLookup = ->
   window.Behaviors
 
+# So, what is the globla var for?
 window.Behaviors = {}
 window.Behaviors.Closeable = require './behaviors/Closeable'
 
@@ -20,13 +21,13 @@ class App extends Backbone.Marionette.Application
     )
 
     @addInitializer( (options) =>
-      @addRegions({ 
-        notificationRegion: { 
+      @addRegions({
+        notificationRegion: {
           selector: "#notifications"
           regionClass: ToggleableRegion
           module: @submodules.Notification
         }
-        todoRegion: { 
+        todoRegion: {
           selector: "#todos"
           regionClass: ToggleableRegion
           module: @submodules.Todo
