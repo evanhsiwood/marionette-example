@@ -47,6 +47,11 @@ gulp.task('vendor-styles', function () {
   ])
   stream.pipe(gulp.dest(paths.dest + 'css/'))
 
+  stream = gulp.src([
+    paths.vendor + 'fonts/**'
+  ])
+  stream.pipe(gulp.dest(paths.dest + 'fonts/'))
+
 });
 
 gulp.task('vendor-scripts', function () {
