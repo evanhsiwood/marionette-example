@@ -16,18 +16,20 @@ class App extends Backbone.Marionette.Application
 
     @router = new Backbone.Marionette.AppRouter()
 
-    @addInitializer( (options) =>
+    @addInitializer((options) =>
       (new AppView()).render()
     )
 
-    @addInitializer( (options) =>
+    @addInitializer((options) =>
       @addRegions({
-        notificationRegion: {
+        notificationRegion:
+        {
           selector: "#notifications"
           regionClass: ToggleableRegion
           module: @submodules.Notification
         }
-        todoRegion: {
+        todoRegion:
+        {
           selector: "#todos"
           regionClass: ToggleableRegion
           module: @submodules.Todo
@@ -35,7 +37,7 @@ class App extends Backbone.Marionette.Application
       })
     )
 
-    @addInitializer( (options) =>
+    @addInitializer((options) =>
       Backbone.history.start()
     )
 
