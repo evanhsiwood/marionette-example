@@ -22,14 +22,12 @@ class App extends Backbone.Marionette.Application
 
     @addInitializer((options) =>
       @addRegions({
-        notificationRegion:
-        {
+        notificationRegion: {
           selector: "#notifications"
           regionClass: ToggleableRegion
           module: @submodules.Notification
         }
-        todoRegion:
-        {
+        todoRegion: {
           selector: "#todos"
           regionClass: ToggleableRegion
           module: @submodules.Todo
