@@ -1,0 +1,9 @@
+{{#if done}}
+    <div class="check fa fa-check-square-o fa-fw"></div>
+    <a href="#todo/{{text}}" class="checked">{{text}}</a>
+{{else}}
+    <div class="check fa fa-square-o fa-fw"></div>
+    <a href="#todo/{{text}}">{{text}}</a>
+{{/if}}
+
+<span class="close">&times;</span>

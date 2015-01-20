@@ -12,7 +12,7 @@ gulp.task 'watch', ->
 
   gulp.watch(paths.src + 'scripts/**', ['scripts'])
   gulp.watch(paths.src + 'styles/**/*.styl', ['styles'])
-  gulp.watch(paths.src + 'index.jade', ['html'])
+  gulp.watch(paths.src + 'index.html', ['html'])
 
   gulp.watch([
     paths.dest + 'js/*.js',

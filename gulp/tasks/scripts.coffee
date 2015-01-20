@@ -16,8 +16,8 @@ gulp.task 'scripts', ->
   .pipe(plumber())
   .pipe(browserify({
       debug: env = 'development',
-      transform: ['coffeeify', 'jadeify'],
-      extensions: ['.coffee', '.jade']
+      transform: ['coffeeify', 'hbsify'],
+      extensions: ['.coffee', '.hbs']
     }))
   .pipe(concat('index.js'))
 

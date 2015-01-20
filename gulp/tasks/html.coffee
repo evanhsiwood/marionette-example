@@ -1,6 +1,5 @@
 gulp = require('gulp')
 plumber = require('gulp-plumber')
-jade = require('gulp-jade')
 
 context = require('./context')
 
@@ -9,11 +8,8 @@ paths = context.paths
 env = context.env
 
 gulp.task 'html', ->
-  gulp.src(paths.src + 'index.jade')
+  gulp.src(paths.src + 'index.html')
   .pipe(plumber())
-  .pipe(jade({
-      pretty: env == 'development'
-    }))
   .pipe(gulp.dest(paths.dest))
 
   return
