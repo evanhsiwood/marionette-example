@@ -13,7 +13,7 @@ module.exports = class TodoModule extends BaseModule
     @collection.fetch()
 
     @app.router.processAppRoutes @, {
-      'todo/:text': 'showTodo'
+      'todo/:id': 'showTodo'
     }
 
   onStart: ->
@@ -23,5 +23,5 @@ module.exports = class TodoModule extends BaseModule
   onStop: ->
     console.log 'Stopping TodoModule'
 
-  showTodo: (text) ->
-    @collection.showTodo(text)
+  showTodo: (id) ->
+    @collection.showTodo(id)

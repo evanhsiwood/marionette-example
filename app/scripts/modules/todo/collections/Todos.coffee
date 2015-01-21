@@ -4,6 +4,6 @@ module.exports = class Todos extends Backbone.Collection
   model: Todo
   url: 'todos/'
 
-  showTodo: (text) ->
-    _.each @where(text: text), (todo) ->
+  showTodo: (id) ->
+    _.each @where(id: id), (todo) ->
       todo.toggleActive()

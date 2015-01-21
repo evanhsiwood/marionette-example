@@ -1,31 +1,31 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "text": "Wash dishes",
         "done": false
     },
     {
-        "id": 2,
+        "id": "2",
         "text": "Learn Marionette.js",
         "done": true
     },
     {
-        "id": 3,
+        "id": "3",
         "text": "Page request",
         "done": false
     },
     {
-        "id": 4,
+        "id": "4",
         "text": "Infinite scroll",
         "done": false
     },
     {
-        "id": 5,
+        "id": "5",
         "text": "Infinite scroll",
         "done": false
     },
     {
-        "id": 6,
+        "id": "6",
         "text": "Infinite scroll",
         "done": false
     }
