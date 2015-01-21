@@ -1,5 +1,6 @@
 module.exports = class Todo extends Backbone.Model
   defaults:
+    id: 0
     text: ''
     done: false
     active: false
