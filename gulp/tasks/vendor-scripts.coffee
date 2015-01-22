@@ -19,6 +19,7 @@ gulp.task 'vendor-scripts', ->
     paths.vendor + 'scripts/backbone.syphon.js',
     paths.vendor + 'scripts/backbone.marionette.js',
     paths.vendor + 'scripts/backbone-faux-server.js'
+    paths.vendor + 'scripts/react.js'
   ])
   .pipe(plumber())
   .pipe(concat("vendor.js"))
