@@ -2,7 +2,7 @@
 
 ## Todo List
 
-1. `gulp production` should uglify js and css files.
+1. `gulp production` should uglify js and css files. Bug in `if env == 'production'`
 2. 
 
 # [ORIGIN README] backbone-marionette-gulp-seed
