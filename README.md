@@ -2,10 +2,12 @@
 
 ## Todo List
 
-1. `gulp production` should uglify js and css files. Bug in `if env == 'production'`
-2. 
+1. √ `gulp production` should uglify js and css files. Bug in `if env == 'production'`
+2. new todo item should be active when clicked.
 
-# [ORIGIN README] backbone-marionette-gulp-seed
+# backbone-marionette-gulp-seed
+
+> **NOTES**: This is original readme.
 
 This is a sample Todos seed application using Backbone.js, Marionette.js, Twitter Bootstrap 3, Stylus, Handlebars and Coffeescript all bundled with Gulp.js
 
