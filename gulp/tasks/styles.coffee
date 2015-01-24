@@ -4,22 +4,19 @@ plumber = require('gulp-plumber')
 sass = require('gulp-sass')
 minify = require('gulp-minify-css')
 
-context = require('./context')
+config = require('./config')
 
-
-paths = context.paths
-env = context.env
 
 gulp.task 'styles', ->
 #  stream = gulp.src(paths.src + 'styles/**/*.styl')
 #  .pipe(plumber())
 #  .pipe(stylus({use: ['nib']}))
-  stream = gulp.src(paths.src + 'styles/**/*.scss')
+  stream = gulp.src(config.paths.src + 'styles/**/*.scss')
   .pipe(plumber())
   .pipe(sass())
 
-  stream.pipe(minify()) if env == 'production'
+  stream.pipe(minify()) if config.env() == 'production'
 
-  stream.pipe(gulp.dest(paths.dest + 'css/'))
+  stream.pipe(gulp.dest(config.paths.dest + 'css/'))
 
   return

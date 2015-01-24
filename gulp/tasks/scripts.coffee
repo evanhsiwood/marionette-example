@@ -4,25 +4,20 @@ concat = require('gulp-concat')
 uglify = require('gulp-uglify')
 browserify = require('gulp-browserify')
 
-
-context = require('./context')
-
-
-paths = context.paths
-env = context.env
+config = require('./config')
 
 gulp.task 'scripts', ->
-  stream = gulp.src(paths.src + 'scripts/index.coffee', {read: false})
+  stream = gulp.src(config.paths.src + 'scripts/index.coffee', {read: false})
   .pipe(plumber())
   .pipe(browserify({
-      debug: env = 'development',
+      debug: config.env() == 'development',
       transform: ['coffeeify', 'hbsify'],
       extensions: ['.coffee', '.hbs']
     }))
   .pipe(concat('index.js'))
 
-  stream.pipe(uglify()) if env == 'production'
+  stream.pipe(uglify()) if config.env() == 'production'
 
-  stream.pipe(gulp.dest(paths.dest + 'js/'))
+  stream.pipe(gulp.dest(config.paths.dest + 'js/'))
 
   return

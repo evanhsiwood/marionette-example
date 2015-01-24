@@ -1,15 +1,11 @@
 gulp = require('gulp')
 plumber = require('gulp-plumber')
 
-context = require('./context')
-
-
-paths = context.paths
-env = context.env
+config = require('./config')
 
 gulp.task 'html', ->
-  gulp.src(paths.src + 'index.html')
+  gulp.src(config.paths.src + 'index.html')
   .pipe(plumber())
-  .pipe(gulp.dest(paths.dest))
+  .pipe(gulp.dest(config.paths.dest))
 
   return

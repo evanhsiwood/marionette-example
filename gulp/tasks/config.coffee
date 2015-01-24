@@ -13,6 +13,7 @@ module.exports = {
     assets: './assets/',
     mock: './mock/'
   },
-  env: env
+  env: ->
+    env
 
 }

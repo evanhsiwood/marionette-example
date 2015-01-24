@@ -1,23 +1,19 @@
 gulp = require('gulp')
 livereload = require('gulp-livereload')
 
-context = require('./context')
-
-
-paths = context.paths
-env = context.env
+config = require('./config')
 
 gulp.task 'watch', ->
   server = livereload()
 
-  gulp.watch(paths.src + 'scripts/**', ['scripts'])
-  gulp.watch(paths.src + 'styles/**/*.styl', ['styles'])
-  gulp.watch(paths.src + 'index.html', ['html'])
+  gulp.watch(config.paths.src + 'scripts/**', ['scripts'])
+  gulp.watch(config.paths.src + 'styles/**/*.scss', ['styles'])
+  gulp.watch(config.paths.src + 'index.html', ['html'])
 
   gulp.watch([
-    paths.dest + 'js/*.js',
-    paths.dest + 'css/*.css',
-    paths.dest + '**/*.html'
+    config.paths.dest + 'js/*.js',
+    config.paths.dest + 'css/*.css',
+    config.paths.dest + '**/*.html'
   ], (evt)->
     server.changed(evt.path)
   )
