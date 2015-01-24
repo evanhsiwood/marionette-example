@@ -13,6 +13,7 @@ AppView = require './views/AppView'
 # 概念3 - Module
 TodoModule = require('./modules/todo/TodoModule')
 NotificationModule = require('./modules/notification/NotificationModule')
+ColorbarModule = require('./modules/colorbar/ColorbarModule')
 
 class App extends Backbone.Marionette.Application
   initialize: =>
@@ -39,6 +40,11 @@ class App extends Backbone.Marionette.Application
           regionClass: ToggleableRegion
           module: @submodules.Todo
         }
+        colorbarRegion: {
+          selector: "#colorbar"
+          regionClass: ToggleableRegion
+          module: @submodules.Colorbar
+        }
       })
     )
 
@@ -51,6 +57,7 @@ class App extends Backbone.Marionette.Application
     # module 初始化
     @module('Notification', NotificationModule)
     @module('Todo', TodoModule)
+    @module('Colorbar', ColorbarModule)
 
     @start()
 
