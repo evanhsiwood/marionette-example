@@ -19,10 +19,16 @@ module.exports = React.createClass({
         var _this = this;
 
         return (
-            <div className='root'>
-            {_.map(this.props.rows, function (row) {
-                return <ItemRenderV key={row.color} data={row} onSelect={_this.__onItemRendererSelect} />;
-            })}
+            <div className="panel panel-default">
+                <div className="panel-heading">Colorbar
+                    <button className="close">&times;
+                    </button>
+                </div>
+                <div className="panel-body">
+                    {_.map(this.props.rows, function (row) {
+                        return <ItemRenderV key={row.color} data={row} onSelect={_this.__onItemRendererSelect} />;
+                    })}
+                </div>
             </div>
         );
     }
