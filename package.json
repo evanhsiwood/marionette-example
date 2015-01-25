@@ -17,6 +17,7 @@
     "gulp-stylus": "0.0.12",
     "gulp-uglify": "~0.2.1",
     "hbsify": "^1.0.1",
+    "reactify": "^1.0.0",
     "require-dir": "^0.1.0"
   },
   "dependencies": {
