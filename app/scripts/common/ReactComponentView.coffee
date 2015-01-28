@@ -6,8 +6,8 @@ module.exports = class ReactComponentView extends Backbone.Marionette.View
     component = @component()
     React.renderComponent component, @_reactMountEl
 
+  # Figure out when will trigger this. It's no use now.
   onClose: ->
-    debugger
     React.unmountComponentAtNode @_reactMountEl if @_reactMountEl
 
 
