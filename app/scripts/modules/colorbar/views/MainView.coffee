@@ -40,7 +40,7 @@ module.exports = class MainView extends ReactComponentView
     Closeable: {}
 
   component: ->
-    MainV({rows: getData()})
+    new MainV({rows: getData()})
 
 
 

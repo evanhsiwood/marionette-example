@@ -4,7 +4,7 @@ module.exports = class ReactComponentView extends Backbone.Marionette.View
 
     @_reactMountEl = @$el[0]
     component = @component()
-    React.renderComponent component, @_reactMountEl
+    React.render component, @_reactMountEl
 
   # Figure out when will trigger this. It's no use now.
   onClose: ->
