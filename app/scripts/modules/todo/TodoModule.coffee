@@ -6,7 +6,7 @@ module.exports = class TodoModule extends BaseModule
     @MainView = require './views/MainView'
 
     console.log 'Initializing TodoModule'
-    @startWithParent = true
+    @startWithParent = false
 
     @collection = new Todos([])
 
